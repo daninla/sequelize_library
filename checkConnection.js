@@ -1,4 +1,5 @@
-const { sequelize } = require("./src/models");
+require("dotenv").config();
+const { sequelize } = require("./database/models");
 
 async function checkConnection() {
   try {

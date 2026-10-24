@@ -1,15 +1,15 @@
-const { sequelize, Genre } = require("./src/models");
+const { sequelize, Book } = require("./database/models");
 
 async function testSync() {
   try {
     await sequelize.authenticate();
     console.log("Database connected.");
 
-    await Genre.drop();
-    console.log("Table genres dropped.");
+    await Book.drop();
+    console.log("Table books dropped.");
 
-    await Genre.sync();
-    console.log("Table genres created again.");
+    await Book.sync();
+    console.log("Table books created again.");
   } catch (error) {
     console.error(error);
   } finally {
